@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- BEGIN HEAD -->
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="HandheldFriendly" content="true">
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta content="minesweeper game" name="description" />
+    <meta content="Asaltech" name="author" />
+    <!-- Include jQuery Mobile stylesheets -->
+    <link rel="stylesheet" href="public/plugins/jquery.mobile/jquery.mobile-1.4.5.min.css">
+    <!-- END JQUERY MOBILE THEME-->
+    <!-- Style sheet theme-->
+    <link rel="stylesheet" href="public/css/styles.css" />
+    <!-- END Style sheet-->
+    <title>Minesweper</title>
+</head>
+<!-- END HEAD -->
+<!-- START BODY-->
+
+<body>
+    <!-- START CONTAINER -->
+    <div data-role="page" id="minesweeper">
+        <!-- START NEW GAME BUTTON -->
+        <div data-role="header" data-tap-toggle="false" data-position="fixed">
+            <!-- HEADER ITEMS IN MOBILE VERSION -->
+            <div class="ui-header-content">
+                <!-- START UI GRID b FOR 33%/33%/33% divide -->
+                <div class="ui-grid-b">
+                    <!-- START THE FIRST UI 33%  -->
+                    <div class="ui-block-a">
+                        <div class="ui-show-popup">
+                            <a href="#myPopupDialog" id="new_game_button" data-rel="popup" class="ui-btn ui-corner-all ui-btn-b ui-icon-refresh ui-btn-icon-notext" data-position-to="window" data-transition="pop">NEW</a>
+                        </div>
+                    </div>
+                    <!-- END THE FIRST UI 33%  -->
+                    <!-- START THE SECONDE UI 33%  -->
+                    <div class="ui-block-b"></div>
+                    <!-- END THE SECONDE UI 33%  -->
+                    <!-- START THE THIRD UI 33%  -->
+                    <div class="ui-block-b">
+                        <!-- START ADD FLAG AND MARKER BUTTON-->
+                        <div class="ui-add-flag"></div>
+                        <!-- END ADD FLAG AND MARKER BUTTON -->
+                    </div>
+                </div>
+                <!-- END UI GRID b FOR 33%/33%/33% divide -->
+            </div>
+            <!-- END HEADER ITEMS IN MOBILE VERSION -->
+        </div>
+        <!-- END NEW GAME BUTTON -->
+        <!-- STAR GRID LAYPOUT FOR GAME -->
+        <div data-role="content" class="ui-content">
+            <!-- START MOBILE 100% WIDTH GRID LAYOUT -->
+            <div class="ui-grid-solo">
+                <!-- START BLOCK A 100% WIDTH IN GRID-->
+                <div class="ui-block-a">
+                    <!-- START GRID TABLE FOR THE GAME -->
+                    <div class="floor">
+                        <table></table>
+                    </div>
+                    <!-- END GRID TABLE FOR THE GAME -->
+                </div>
+                <!-- END BLOCK A 100% WIDTH IN GRID-->
+            </div>
+            <!-- END MOBILE 100% GRID LAYOUT -->
+        </div>
+        <!-- END GRID LAYPOUT FOR GAME -->
+        <!-- START THE FOOTER FOR GAME -->
+        <div data-role="footer" data-theme="b" data-tap-toggle="false" data-position="fixed">
+            <!-- START FOOTER MOBILE VERSION CONTENT -->
+            <div class="ui-footer-content">
+                <!-- START UI GRID b FOR 33%/33%/33% divide -->
+                <div class="ui-grid-b">
+                    <!-- START THE FIRST UI 33%  -->
+                    <div class="ui-block-a">
+                        <div class="ui-number-bomb">00</div>
+                    </div>
+                    <!-- END THE FIRST UI 33%  -->
+                    <!-- START THE SECOND UI 33%  -->
+                    <div class="ui-block-b">
+                        <div class="ui-mineSweeper-title"></div>
+                    </div>
+                    <!-- END THE SECOND UI 33%  -->
+                    <!-- START THE THIRD UI 33%  -->
+                    <div class="ui-block-c">
+                        <div class="ui-time-play">
+                            00:00:00
+                        </div>
+                    </div>
+                    <!-- START THE THIRD UI 33%  -->
+                </div>
+                <!-- END UI GRID b FOR 33%/33%/33% divide -->
+            </div>
+            <!-- END FOOTER MOBILE VERSION CONTENT -->
+        </div>
+        <!-- END THE FOOTER FOR GAME -->
+        <!-- START THE POPUP CONTENT-->
+        <div data-role="popup" data-overlay-theme="b" data-theme="b" data-dismissible="false" id="myPopupDialog">
+            <a href="#" data-rel="back" data-role="button" data-theme="b" data-icon="delete" data-iconpos="notext" class="ui-btn-right">Close</a>
+            <div class="ui-content-popup">
+                <div class="ui-grid-b">
+                    <div class="ui-block-a">
+                        <div class="ui-beginner-title">
+                            Beginner
+                        </div>
+                    </div>
+                    <div class="ui-block-b">
+                        <div class="ui-intermediate-title">
+                            Intermediate
+                        </div>
+                    </div>
+                    <div class="ui-block-c">
+                        <div class="ui-expert-title">
+                            Expert
+                        </div>
+                    </div>
+                </div>
+                <div class="ui-grid-b">
+                    <div class="ui-block-a padding-ui-popup-grid">
+                        <a href="#" data-rel="back">
+                            <img id="beg" src="public/img/level1.png" onclick="MINESWEEPER.insert_number(0);">
+                        </a>
+                    </div>
+                    <div class="ui-block-b padding-ui-popup-grid">
+                        <a href="#" data-rel="back"><img id="inter" src="public/img/level2.png" onclick="MINESWEEPER.insert_number(1);"></a>
+                    </div>
+                    <div class="ui-block-c padding-ui-popup-grid">
+                        <a href="#" data-rel="back">
+                            <img id="exp" src="public/img/level3.png" onclick="MINESWEEPER.insert_number(2);">
+                        </a>
+                    </div>
+                </div>
+                <div class="ui-grid-b">
+                    <div class="ui-block-a">
+                        <select id="LevelChoice0" data-mini="true" data-icon="false">
+                            <option value="1">Level 1</option>
+                            <option value="2">Level 2</option>
+                            <option value="3">Level 3</option>
+                        </select>
+                    </div>
+                    <div class="ui-block-b">
+                        <select id="LevelChoice1" data-mini="true" data-icon="false">
+                            <option value="1">Level 1</option>
+                            <option value="2">Level 2</option>
+                            <option value="3">Level 3</option>
+                        </select>
+                    </div>
+                    <div class="ui-block-c">
+                        <select id="LevelChoice2" data-mini="true" data-icon="false">
+                            <option value="1">Level 1</option>
+                            <option value="2">Level 2</option>
+                            <option value="3">Level 3</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END THE POPUP CONTENT-->
+    </div>
+    <!-- END CONTAINER -->
+</body>
+<!-- END BODY-->
+<!-- JQUERY -->
+<script src="public/plugins/jquery/jquery-1.11.3.min.js"></script>
+<!-- END JQUERY -->
+<!-- ICLUDE the jQuery Mobile library -->
+<script src="public/plugins/jquery.mobile/jquery.mobile-1.4.5.min.js"></script>
+<!-- END JQUERY MOBILE -->
+<!-- ICLUDE TIMER LIBRARY -->
+<script src="public/plugins/jquery-stopwatch/jquery.stopwatch.js"></script>
+<!-- END  Include TIMER LIBRARY  -->
+<!-- GAME APP -->
+<script src="game/minesweeper/minesweeper.js"></script>
+<!-- END GAME APP -->
+<script type="text/javascript">
+$(document).on("pagecreate", "#minesweeper", function() {
+    MINESWEEPER.INIT();
+});
+</script>
+
+</html>

@@ -1,0 +1,231 @@
+html {
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+}
+
+body {
+    -webkit-user-select: none;
+}
+
+h1 {
+    color: #B26B6B;
+    font-family: "Lucida Console";
+    font-size: 50px;
+}
+
+h2,
+span {
+    text-align: center;
+}
+
+table {
+    border-spacing: 2px;
+    table-layout: fixed;
+    width: 100%;
+    padding: 0;
+}
+
+td {
+    padding: 1.2em;
+}
+
+img {
+    width: 100%;
+    padding-top: 5px;
+}
+
+.paddingTable {
+    padding: 50px;
+}
+
+.floor {
+    margin: 0px auto;
+    overflow: auto;
+}
+
+.newGameButton {
+    text-align: center;
+}
+
+.bomb {
+    background-image: url("../img/bumb.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    border-radius: 1px solid #000;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.hasbomb {
+    background: #E0EBEB;
+}
+
+.open {
+    background-image: url("../img/CinderBlockWall.png");
+    background-position: center;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.close {
+    background-image: url("../img/sqr33.png");
+    background-position: center;
+    background-size: 100% 100%;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.clear {
+    background-image: url("../img/sqr33.png");
+    background-position: center;
+}
+
+.explosion {
+    background-image: url("../img/clickedBumb.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.flag {
+    background-image: url("../img/flag.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    text-indent: -9999px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    background-color: #FFF;
+}
+
+.newMarker {
+    background-image: url("../img/attention.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100% 100%;
+    text-indent: -9999px;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    background-color: #FFF;
+}
+
+.close_isbomb {
+    background-image: url("../img/sqr33.png");
+    background-position: center;
+    background-size: 100% 100%;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.showText {
+    display: none;
+    font-family: fantasy;
+    font-weight: 900;
+    width: 0px;
+    height: 0px;
+    margin-left: 50%;
+    margin-top: -11px;
+    font-size: 18px;
+}
+
+.ui-header {
+    background-color: #e42012 !important;
+    border-color: #e42012 !important;
+}
+
+.ui-footer {
+    background-color: #e42012;
+    border-color: #e42012;
+}
+
+.ui-content {
+    min-height: 100%;
+    padding-left: 0.375em;
+    padding-right: 0.375em;
+}
+
+.ui-content-popup {
+    background-color: #FFF;
+}
+
+.padding-ui-popup-grid {
+    padding: 0.375em;
+}
+
+.ui-time-play {
+    float: right;
+    color: #FFF;
+    padding: 0.625em;
+}
+
+.ui-number-bomb {
+    color: #FFF;
+    padding: 0.625em;
+}
+
+.ui-add-flag {
+    float: right;
+    padding-right: 0.625em;
+}
+
+.ui-icon-flag:after {
+    background-image: url("../img/flag.png");
+    background-size: 90% 100%;
+}
+
+.ui-icon-atention:after {
+    background-image: url("../img/atention.ico");
+    background-size: 90% 80%;
+}
+
+.ui-page {
+    background-color: #D89672
+}
+
+.ui-show-popup {
+    padding-left: 0.625em;
+}
+
+.ui-beginner-title {
+    text-align: center;
+    color: #000;
+    font-family: sans-serif;
+}
+
+.ui-intermediate-title {
+    text-align: center;
+    color: #000;
+}
+
+.ui-expert-title {
+    text-align: center;
+    color: #000;
+}
+
+.ui-mineSweeper-title {
+    text-align: center;
+    color: #FFF;
+    padding: 0.625em;
+}
+
+.close2 {
+    background-image: url("../img/CinderBlockWall.png");
+    background-position: center;
+}
